@@ -230,6 +230,37 @@ section { padding: 5rem 0; }
   padding: 1.1rem 0;
 }
 
+/* ── Thermal Teeth ─────────────────────────────── */
+.thermal-teeth-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.thermal-tooth {
+  width: 90px;
+  height: 90px;
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+
+.thermal-tooth canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .thermal-tooth { width: 60px; height: 60px; }
+  .thermal-teeth-wrapper { padding: 0 0.75rem; }
+}
+/* ─────────────────────────────────────────────── */
+
 #header.scrolled {
   background: rgba(255,255,255,.97);
   backdrop-filter: blur(12px);
@@ -495,6 +526,34 @@ section { padding: 5rem 0; }
   height: 3px;
   background: linear-gradient(90deg, #7ec8f7, transparent);
   border-radius: 2px;
+}
+
+/* ── Yeniden Thermal Overlay ───────────────────── */
+.yeniden-wrap {
+  position: relative;
+  display: inline-block;
+}
+.thermal-yeniden {
+  position: absolute;
+  inset: -4px -8px;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+.thermal-yeniden canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+/* ── Before/After Diş İkonları ─────────────────── */
+.tooth-icon {
+  width: 46px;
+  height: 60px;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.12));
+}
+.ba-after .tooth-icon {
+  filter: drop-shadow(0 2px 8px rgba(44,111,237,.25));
 }
 
 .hero-subtitle {

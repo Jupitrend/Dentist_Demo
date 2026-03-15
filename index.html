@@ -23,6 +23,11 @@
      HEADER / NAVIGATION
 ═══════════════════════════════════════════════════════════ -->
 <header id="header" role="banner">
+  <!-- Thermal tooth decorations — left: rotten, right: healthy -->
+  <div class="thermal-teeth-wrapper" aria-hidden="true">
+    <div id="thermal-left"  class="thermal-tooth thermal-tooth--left"></div>
+    <div id="thermal-right" class="thermal-tooth thermal-tooth--right"></div>
+  </div>
   <div class="container">
     <nav class="nav-inner" role="navigation" aria-label="Ana navigasyon">
 
@@ -89,7 +94,7 @@
 
       <h1 class="hero-title">
         Gülüşünüzü<br>
-        <span class="highlight">Yeniden</span><br>
+        <span class="highlight yeniden-wrap">Yeniden<div id="thermal-yeniden" class="thermal-yeniden" aria-hidden="true"></div></span><br>
         Keşfedin
       </h1>
 
@@ -727,12 +732,24 @@
       <article class="ba-card reveal">
         <div class="ba-visual">
           <div class="ba-before">
-            <span aria-hidden="true">🫤</span>
+            <svg class="tooth-icon" viewBox="0 0 44 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7 17C7 7 14 2 22 2C30 2 37 7 37 17C37 25 34 30 32 36L30 52C30 56 27 58 24 58C21 58 19 55 19 52L19 45L19 52C19 55 17 58 14 58C11 58 9 56 9 52L7.5 36C6 30 7 25 7 17Z" fill="#C8A87A" stroke="#9E7A4A" stroke-width="1.5"/>
+              <ellipse cx="16" cy="19" rx="3.5" ry="2.5" fill="#6B4226" opacity="0.9"/>
+              <ellipse cx="27" cy="26" rx="4.5" ry="3" fill="#6B4226" opacity="0.85"/>
+              <ellipse cx="20" cy="30" rx="2.5" ry="2" fill="#6B4226" opacity="0.7"/>
+              <path d="M22 6L19 24L24 38" stroke="#6B4226" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <path d="M34 8L38 4L39 11" fill="#C8A87A" stroke="#9E7A4A" stroke-width="1.2"/>
+            </svg>
             <p>Önce</p>
           </div>
           <div class="ba-divider" aria-hidden="true">→</div>
           <div class="ba-after">
-            <span aria-hidden="true">😁</span>
+            <svg class="tooth-icon" viewBox="0 0 44 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 17C5 6 13 1 22 1C31 1 39 6 39 17C39 26 36 32 34 38L32 54C32 57 29 59 26 59C23 59 21 57 21 54L21 47L21 54C21 57 19 59 16 59C13 59 11 57 11 54L9 38C7 32 5 26 5 17Z" fill="white" stroke="#93C5FD" stroke-width="2"/>
+              <path d="M12 15C14 8 18 5 22 6C26 5 30 8 32 15" stroke="#DBEAFE" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M31 5C34 10 35 18 34 24" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
+              <path d="M38 4L39 7L42 8L39 9L38 12L37 9L34 8L37 7Z" fill="#2C6FED" opacity="0.75"/>
+            </svg>
             <p>Sonra</p>
           </div>
         </div>
@@ -751,12 +768,24 @@
       <article class="ba-card reveal">
         <div class="ba-visual">
           <div class="ba-before">
-            <span aria-hidden="true">😕</span>
+            <svg class="tooth-icon" viewBox="0 0 44 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7 17C7 7 14 2 22 2C30 2 37 7 37 17C37 25 34 30 32 36L30 52C30 56 27 58 24 58C21 58 19 55 19 52L19 45L19 52C19 55 17 58 14 58C11 58 9 56 9 52L7.5 36C6 30 7 25 7 17Z" fill="#C8A87A" stroke="#9E7A4A" stroke-width="1.5"/>
+              <ellipse cx="16" cy="19" rx="3.5" ry="2.5" fill="#6B4226" opacity="0.9"/>
+              <ellipse cx="27" cy="26" rx="4.5" ry="3" fill="#6B4226" opacity="0.85"/>
+              <ellipse cx="20" cy="30" rx="2.5" ry="2" fill="#6B4226" opacity="0.7"/>
+              <path d="M22 6L19 24L24 38" stroke="#6B4226" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <path d="M34 8L38 4L39 11" fill="#C8A87A" stroke="#9E7A4A" stroke-width="1.2"/>
+            </svg>
             <p>Önce</p>
           </div>
           <div class="ba-divider" aria-hidden="true">→</div>
           <div class="ba-after">
-            <span aria-hidden="true">😄</span>
+            <svg class="tooth-icon" viewBox="0 0 44 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 17C5 6 13 1 22 1C31 1 39 6 39 17C39 26 36 32 34 38L32 54C32 57 29 59 26 59C23 59 21 57 21 54L21 47L21 54C21 57 19 59 16 59C13 59 11 57 11 54L9 38C7 32 5 26 5 17Z" fill="white" stroke="#93C5FD" stroke-width="2"/>
+              <path d="M12 15C14 8 18 5 22 6C26 5 30 8 32 15" stroke="#DBEAFE" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M31 5C34 10 35 18 34 24" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
+              <path d="M38 4L39 7L42 8L39 9L38 12L37 9L34 8L37 7Z" fill="#2C6FED" opacity="0.75"/>
+            </svg>
             <p>Sonra</p>
           </div>
         </div>
@@ -775,12 +804,24 @@
       <article class="ba-card reveal">
         <div class="ba-visual">
           <div class="ba-before">
-            <span aria-hidden="true">😬</span>
+            <svg class="tooth-icon" viewBox="0 0 44 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7 17C7 7 14 2 22 2C30 2 37 7 37 17C37 25 34 30 32 36L30 52C30 56 27 58 24 58C21 58 19 55 19 52L19 45L19 52C19 55 17 58 14 58C11 58 9 56 9 52L7.5 36C6 30 7 25 7 17Z" fill="#C8A87A" stroke="#9E7A4A" stroke-width="1.5"/>
+              <ellipse cx="16" cy="19" rx="3.5" ry="2.5" fill="#6B4226" opacity="0.9"/>
+              <ellipse cx="27" cy="26" rx="4.5" ry="3" fill="#6B4226" opacity="0.85"/>
+              <ellipse cx="20" cy="30" rx="2.5" ry="2" fill="#6B4226" opacity="0.7"/>
+              <path d="M22 6L19 24L24 38" stroke="#6B4226" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+              <path d="M34 8L38 4L39 11" fill="#C8A87A" stroke="#9E7A4A" stroke-width="1.2"/>
+            </svg>
             <p>Önce</p>
           </div>
           <div class="ba-divider" aria-hidden="true">→</div>
           <div class="ba-after">
-            <span aria-hidden="true">🤩</span>
+            <svg class="tooth-icon" viewBox="0 0 44 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 17C5 6 13 1 22 1C31 1 39 6 39 17C39 26 36 32 34 38L32 54C32 57 29 59 26 59C23 59 21 57 21 54L21 47L21 54C21 57 19 59 16 59C13 59 11 57 11 54L9 38C7 32 5 26 5 17Z" fill="white" stroke="#93C5FD" stroke-width="2"/>
+              <path d="M12 15C14 8 18 5 22 6C26 5 30 8 32 15" stroke="#DBEAFE" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M31 5C34 10 35 18 34 24" stroke="white" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
+              <path d="M38 4L39 7L42 8L39 9L38 12L37 9L34 8L37 7Z" fill="#2C6FED" opacity="0.75"/>
+            </svg>
             <p>Sonra</p>
           </div>
         </div>
@@ -1223,5 +1264,7 @@
 
 
 <script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="js/thermal-teeth.js"></script>
 </body>
 </html>
