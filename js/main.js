@@ -275,29 +275,34 @@ function initCountUp() {
   const counters = $$('[data-count]');
   if (!counters.length) return;
 
-  const observer = new IntersectionObserver(entries => {
+  function runCount(el) {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const start = performance.now();
+    el.textContent = '0' + suffix;
+
+    const tick = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  // Fire count-up when the stat item becomes .visible (reveal animation done)
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseInt(el.dataset.count, 10);
-      const suffix = el.dataset.suffix || '';
-      const duration = 1800;
-      const start = performance.now();
-
-      const tick = (now) => {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-        el.textContent = Math.round(eased * target) + suffix;
-        if (progress < 1) requestAnimationFrame(tick);
-      };
-
-      requestAnimationFrame(tick);
-      observer.unobserve(el);
+      // small delay so reveal CSS transition starts first
+      setTimeout(() => runCount(entry.target), 200);
+      revealObserver.unobserve(entry.target);
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  counters.forEach(el => observer.observe(el));
+  counters.forEach(el => revealObserver.observe(el));
 }
 
 /* ── Active Nav Link on Scroll ───────────────────────────────── */

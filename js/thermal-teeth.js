@@ -899,14 +899,11 @@
       return;
     }
 
-    // Header teeth (left = rotten, right = healthy)
-    var leftEl  = document.getElementById('thermal-left');
-    var rightEl = document.getElementById('thermal-right');
-    if (leftEl && rightEl) {
-      var rottenCanvas  = createRottenToothCanvas();
-      var healthyCanvas = createHealthyToothCanvas();
-      new ThermalEffectEngine(leftEl,  rottenCanvas).init();
-      new ThermalEffectEngine(rightEl, healthyCanvas).init();
+    // Large background tooth decoration
+    var bgEl = document.getElementById('thermal-bg');
+    if (bgEl) {
+      var bgCanvas = createHealthyToothCanvas();
+      new ThermalEffectEngine(bgEl, bgCanvas).init();
     }
 
   }
